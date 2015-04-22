@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+var debug = require('debug')('CompanyMail');
+var app = require('../app');
+
+//连接的端口号为：9999
+app.set('port', process.env.PORT || 9999);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});
